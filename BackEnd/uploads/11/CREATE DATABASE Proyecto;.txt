@@ -1,0 +1,122 @@
+CREATE DATABASE Proyecto;
+
+USE Proyecto;
+
+-- Create the table dbo.categoria
+CREATE TABLE dbo.categoria (
+    idCategoria INT IDENTITY(1,1) PRIMARY KEY,
+    nombre VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE dbo.roles (
+    idRol INT IDENTITY(1,1) PRIMARY KEY,
+    nombre VARCHAR(255) NOT NULL
+) ;
+
+CREATE TABLE dbo.Usuarios (
+    idUsuario INT IDENTITY(1,1) PRIMARY KEY,
+    idRol INT NULL,
+    nombre VARCHAR(255) NOT NULL,
+    correo VARCHAR(255) NOT NULL,
+    contrasena VARCHAR(255) NOT NULL,
+    direccion VARCHAR(255) NULL,
+    FechaHora_uc DATETIME NULL
+);
+
+CREATE TABLE dbo.Producto (
+    idProducto INT IDENTITY(1,1) PRIMARY KEY,
+    idCategoria INT NULL,
+    nombre VARCHAR(255) NOT NULL,
+    precio DECIMAL(10, 2) NOT NULL,
+    cantidad INT NOT NULL,
+    FechaHora_publi DATETIME NULL
+);
+
+CREATE TABLE dbo.Imagenes (
+    idImagen INT IDENTITY(1,1) PRIMARY KEY,
+    idProducto INT NOT NULL,
+    ImagenesURL VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE dbo.Videos (
+    idVideo INT IDENTITY(1,1) PRIMARY KEY,
+    idProducto INT NOT NULL,
+    VideosURL VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE dbo.Pedido (
+    IdPedido INT IDENTITY(1,1) PRIMARY KEY,
+    IdUsuario INT NULL,
+    fecha DATE NOT NULL,
+    total DECIMAL(10, 2) NOT NULL
+);
+
+CREATE TABLE dbo.detallePedido (
+    idDetallePedido INT IDENTITY(1,1) PRIMARY KEY,
+    idPedido INT NULL,
+    idProducto INT NULL,
+    cantidad INT NOT NULL
+);
+
+--roles
+INSERT INTO Proyecto.dbo.roles(nombre) VALUES ('admin');
+INSERT INTO Proyecto.dbo.roles(nombre) VALUES ('cliente');
+
+--categorias
+INSERT INTO Proyecto.dbo.categoria(nombre) VALUES ('Acción');
+INSERT INTO Proyecto.dbo.categoria VALUES ('Aventura');
+INSERT INTO Proyecto.dbo.categoria VALUES ('Rol');
+INSERT INTO Proyecto.dbo.categoria VALUES ('Simulación');
+INSERT INTO Proyecto.dbo.categoria VALUES ('Estrategia');
+INSERT INTO Proyecto.dbo.categoria VALUES ('Deportes');
+INSERT INTO Proyecto.dbo.categoria VALUES ('Carreras');
+INSERT INTO Proyecto.dbo.categoria VALUES ('Lucha');
+INSERT INTO Proyecto.dbo.categoria VALUES ('Indie');
+INSERT INTO Proyecto.dbo.categoria VALUES ('Puzzle');
+
+INSERT INTO Producto (idCategoria, nombre, precio, cantidad, FechaHora_publi) VALUES
+(1, 'Call of Duty: Modern Warfare III', 60.00, 5, '2024-04-17 16:28:28.680'),
+(3, 'Baldur''s Gate 3', 45.00, 10, '2024-04-17 16:30:55.110'),
+(2, 'The Legend of Zelda: Breath of the Wild', 30.00, 15, '2024-04-17 16:33:39.640'),
+(1, 'The Forest', 35.00, 5, '2024-04-17 16:34:44.577'),
+(1, 'HELLDIVERS 2', 35.00, 10, '2024-04-17 16:39:10.520'),
+(4, 'Hogwarts Legacy', 30.00, 5, '2024-04-17 16:55:27.597'),
+(4, 'Fallout 4', 20.00, 3, '2024-04-17 16:58:46.720'),
+(2, 'The Last of Us Part I', 35.00, 5, '2024-04-17 17:01:47.933'),
+(6, 'EA SPORTS FC 24', 25.00, 5, '2024-04-17 17:05:30.940'),
+(1, 'Dead Space Remake', 28.00, 4, '2024-04-17 17:08:17.303');
+
+INSERT INTO Imagenes (idProducto, ImagenesURL) VALUES
+(1, '/images/cod.jpg'),
+(1, '/images/cod2.jpg'),
+(2, '/images/bg.jpg'),
+(2, '/images/bg1.webp'),
+(3, '/images/lg.jpg'),
+(3, '/images/lg1.jpg'),
+(4, '/images/theforest.jpg'),
+(4, '/images/theforest2.webp'),
+(5, '/images/helldivers-2-1.jpg'),
+(5, '/images/Helldivers-2.webp'),
+(6, '/images/1366_2000.jpeg'),
+(6, '/images/44ae35e653a4473de3c1119a88cde4bf3d-Hogwarts-Legacy-review.rhorizontal.w700.webp'),
+(7, '/images/Fallout-4.jpg'),
+(7, '/images/rB3GRFvdPmaALiGt89ysflQ4.webp'),
+(8, '/images/EGS_TheLastofUsPartI_NaughtyDogLLC_S1_2560x1440-3659b5fe340f8fc073257975b20b7f84.jpg'),
+(9, '/images/fc24-features-gameplay-16x9-2.jpg'),
+(10, '/images/Z3uRqREbWnnvvfhzTvASVh-1200-80.jpg'),
+(10, '/images/maxresdefault.jpg');
+
+INSERT INTO Videos (idProducto, VideosURL) VALUES
+(1, 'https://www.youtube.com/embed/mHDEDDrGYvo'),
+(2, 'https://www.youtube.com/embed/1T22wNvoNiU'),
+(3, 'https://www.youtube.com/embed/zw47_q9wbBE'),
+(4, 'https://www.youtube.com/embed/7mwn5U2PNvk'),  
+(5, 'https://www.youtube.com/embed/oD3pxbG9YYI'),
+(6, 'https://www.youtube.com/embed/1O6Qstncpnc'),
+(7, 'https://www.youtube.com/embed/XW7Of3g2JME'),
+(8, 'https://www.youtube.com/embed/CxVyuE2Nn_w'),
+(9, 'https://www.youtube.com/embed/XhP3Xh4LMA8'),
+(10, 'https://www.youtube.com/embed/C1yiuM7blIw');
+
+
+

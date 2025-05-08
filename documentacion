@@ -1,0 +1,20 @@
+Descripción de Carpetas y Archivos
+
+    public/: Contiene archivos públicos como index.html y otros recursos estáticos.
+    src/: Contiene todo el código fuente de la aplicación.
+        api/: Contiene funciones para hacer llamadas a la API.
+        assets/: Archivos estáticos como imágenes y estilos.
+            images/: Imágenes utilizadas en el proyecto.
+            styles/: Archivos CSS, incluyendo la configuración de Tailwind.
+        components/: Componentes de React.
+            common/: Componentes reutilizables como botones, modales, etc.
+            layout/: Componentes de estructura como el encabezado, pie de página y barra lateral.
+            specific/: Componentes específicos de características o páginas, como formularios de usuario o listas de usuarios.
+        hooks/: Hooks personalizados de React.
+        pages/: Componentes de página completa, cada uno representando una ruta en la aplicación.
+        routes/: Configuración de rutas para React Router.
+        services/: Servicios que manejan la lógica de negocio, como autenticación y manejo de usuarios.
+        utils/: Funciones auxiliares y utilitarias.
+        App.js: Componente principal de la aplicación.
+        index.css: Archivo CSS principal.
+        index.js: Punto de entrada de la aplicación.
