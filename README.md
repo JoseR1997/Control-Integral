@@ -12,7 +12,7 @@ Cada módulo representa una funcionalidad clave del sistema:
 - `Home.jsx` – Dashboard con acceso rápido a módulos.
 - `Clientes.jsx` – Gestión de información de los clientes.
 - `Citas.jsx` – Administración de agendas y citas legales.
-- `Facturas.jsx` – Gestión de facturación y cobros.
+- `Facturas.jsx` – Gestión de facturación y cobros (úniocamente empotrando la pagina del facturador que ya tiene, no es un modulo de facturación realmente).
 - `Gestión de servicios.jsx` – Control de servicios jurídicos ofrecidos.
 - `Servicios.jsx` – Listado y edición de servicios legales.
 - `Informes.jsx` – Generación de reportes y estadísticas.
