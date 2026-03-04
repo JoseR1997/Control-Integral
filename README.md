@@ -1,4 +1,4 @@
-# ⚖️ Sistema Integral de Gestión para Bufete de Abogados
+# ⚖️ Sistema Integral de Gestión para Bufete de Abogados (Proyecto universitario)
 
 Este sistema permite a un bufete de abogados gestionar de forma eficiente sus procesos legales, clientes, servicios, comunicación y documentación. Incluye una interfaz web moderna y una API robusta basada en Node.js.
 
